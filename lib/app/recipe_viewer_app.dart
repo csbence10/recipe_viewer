@@ -5,6 +5,13 @@ class RecipeViewerApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      theme: ThemeData(fontFamily: 'Montserrat'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Receptek'),
+        ),
+      ),
+    );
   }
 }
