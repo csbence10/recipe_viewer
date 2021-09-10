@@ -10,7 +10,6 @@ void main() async {
     EasyLocalization(
         supportedLocales: [Locale('en')],
         path: 'assets/translations',
-        fallbackLocale: Locale('en'),
         child: RecipeViewerApp()),
   );
 }
