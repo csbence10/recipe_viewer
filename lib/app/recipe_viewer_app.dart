@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_viewer/ui/recipes/recipe_list/recipe_list_screen.dart';
 import 'package:recipe_viewer/ui/recipes/utils/app_colors.dart';
@@ -9,6 +10,9 @@ class RecipeViewerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       theme: ThemeData(
         fontFamily: 'Montserrat',
         appBarTheme: AppBarTheme(
