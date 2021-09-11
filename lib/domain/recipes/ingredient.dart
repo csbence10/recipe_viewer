@@ -5,11 +5,11 @@ part 'ingredient.g.dart';
 @JsonSerializable()
 class Ingredient {
   @JsonKey(name: 'ing_measure')
-  final int measure;
+  final int? measure;
   @JsonKey(name: 'ing_name')
-  final int name;
+  final String name;
   @JsonKey(name: 'ing_unit')
-  final int unit;
+  final String? unit;
 
   Ingredient(this.measure, this.name, this.unit);
 

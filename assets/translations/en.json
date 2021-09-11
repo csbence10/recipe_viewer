@@ -4,5 +4,7 @@
     "kcal": "{} kcal",
     "ingredients_count": "{} ingredients",
     "ingredients": "Ingredients",
-    "preparation": "Preparation"
+    "preparation": "Preparation",
+    "error": "Failed to load the reqired data. Try again",
+    "retry": "Retry"
 }

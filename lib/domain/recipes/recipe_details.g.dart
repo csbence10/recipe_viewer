@@ -8,14 +8,15 @@ part of 'recipe_details.dart';
 
 RecipeDetails _$RecipeDetailsFromJson(Map<String, dynamic> json) {
   return RecipeDetails(
-    json['id'] as int,
+    json['id'] as String,
     json['imageUrl'] as String,
     json['kcal'] as int,
     json['minutes'] as int,
     json['name'] as String,
     json['steps'] as String,
     (json['ingredients'] as List<dynamic>)
-        .map((e) => Ingredient.fromJson(e as Map<String, dynamic>))
+        .map((e) =>
+            e == null ? null : Ingredient.fromJson(e as Map<String, dynamic>))
         .toList(),
   );
 }

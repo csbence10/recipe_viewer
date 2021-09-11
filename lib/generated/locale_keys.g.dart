@@ -7,5 +7,7 @@ abstract class  LocaleKeys {
   static const ingredients_count = 'ingredients_count';
   static const ingredients = 'ingredients';
   static const preparation = 'preparation';
+  static const error = 'error';
+  static const retry = 'retry';
 
 }
