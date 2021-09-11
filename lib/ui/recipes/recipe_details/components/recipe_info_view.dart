@@ -18,8 +18,9 @@ class RecipeInfoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(
-          horizontal: Dimens.spacing24, vertical: Dimens.spacing16),
+      color: AppColors.white,
+      height: Dimens.spacing56,
+      padding: const EdgeInsets.symmetric(horizontal: Dimens.spacing24),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

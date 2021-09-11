@@ -23,6 +23,18 @@ class RecipeListItemView extends StatelessWidget {
             height: 260,
             fit: BoxFit.fitHeight,
           ),
+          Positioned.fill(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.transparent, Colors.black.withOpacity(0.5)],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: [0.65, 0.95],
+                ),
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.only(
               bottom: Dimens.spacing16,
@@ -30,6 +42,7 @@ class RecipeListItemView extends StatelessWidget {
             ),
             child: Text(
               recipe.name,
+              overflow: TextOverflow.clip,
               style: TextStyles.header,
             ),
           )
