@@ -11,6 +11,8 @@ class RecipeViewerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ProviderScope(
+      // Uncomment this to use mocked data
+      // overrides: [dioProvider.overrideWithValue((MockDio()))],
       child: MaterialApp(
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
