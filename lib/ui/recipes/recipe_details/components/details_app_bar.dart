@@ -4,14 +4,14 @@ import 'package:recipe_viewer/ui/recipes/utils/app_colors.dart';
 import 'package:recipe_viewer/ui/recipes/utils/text_styles.dart';
 
 class DetailsAppBar extends StatefulWidget {
-  final ScrollController scrollController;
+  final ScrollController? scrollController;
   final String title;
   final String imageUrl;
   const DetailsAppBar(
       {Key? key,
       required this.title,
       required this.imageUrl,
-      required this.scrollController})
+      this.scrollController})
       : super(key: key);
 
   @override
@@ -24,7 +24,7 @@ class _DetailsAppBarState extends State<DetailsAppBar> {
   void initState() {
     super.initState();
     final controller = widget.scrollController;
-    controller.addListener(() {
+    controller?.addListener(() {
       if (controller.offset > 250 && _isDark) {
         setState(() => _isDark = false);
         print(controller.offset);

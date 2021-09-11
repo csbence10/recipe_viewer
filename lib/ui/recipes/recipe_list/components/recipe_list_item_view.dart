@@ -13,7 +13,7 @@ class RecipeListItemView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed(Routes.details, arguments: recipe.id);
+        Navigator.of(context).pushNamed(Routes.details, arguments: recipe);
       },
       child: Stack(
         alignment: Alignment.bottomLeft,

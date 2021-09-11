@@ -17,8 +17,6 @@ dependencies:
   dio: ^4.0.0
   # State management
   flutter_riverpod: ^1.0.0-dev.7
-  # UI
-  sliver_tools: ^0.2.5
   # Utils
   cached_network_image: ^3.1.0
   json_annotation: 4.0.1
