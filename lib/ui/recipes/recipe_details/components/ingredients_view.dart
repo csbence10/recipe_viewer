@@ -2,9 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_viewer/domain/recipes/ingredient.dart';
 import 'package:recipe_viewer/generated/locale_keys.g.dart';
-import 'package:recipe_viewer/ui/recipes/utils/app_colors.dart';
 import 'package:recipe_viewer/ui/recipes/utils/dimens.dart';
-import 'package:recipe_viewer/ui/recipes/utils/text_styles.dart';
 
 class IngredientsView extends StatelessWidget {
   final List<Ingredient> ingredients;
@@ -13,14 +11,15 @@ class IngredientsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       padding: const EdgeInsets.symmetric(
           horizontal: Dimens.spacing24, vertical: Dimens.spacing16),
-      color: AppColors.backgroundGrey,
+      color: theme.backgroundColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(LocaleKeys.ingredients.tr(), style: TextStyles.subtitleGrey),
+          Text(LocaleKeys.ingredients.tr(), style: theme.textTheme.headline6),
           const SizedBox(height: Dimens.spacing8),
           ...ingredients
               .map(
@@ -48,13 +47,17 @@ class _IngredinetRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text("• ", style: TextStyles.bodyGrey),
-        Expanded(
-          child: Text(_text, style: TextStyles.bodyGrey),
-        ),
-      ],
+    final theme = Theme.of(context);
+    return DefaultTextStyle(
+      style: theme.textTheme.bodyText1!,
+      child: Row(
+        children: [
+          Text("• "),
+          Expanded(
+            child: Text(_text),
+          ),
+        ],
+      ),
     );
   }
 }

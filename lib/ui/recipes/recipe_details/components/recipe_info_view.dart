@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_viewer/generated/locale_keys.g.dart';
-import 'package:recipe_viewer/ui/recipes/utils/app_colors.dart';
 import 'package:recipe_viewer/ui/recipes/utils/dimens.dart';
 
 class RecipeInfoView extends StatelessWidget {
@@ -17,20 +16,24 @@ class RecipeInfoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
-      color: AppColors.white,
+      color: theme.scaffoldBackgroundColor,
       height: Dimens.spacing56,
       padding: const EdgeInsets.symmetric(horizontal: Dimens.spacing24),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(LocaleKeys.kcal.tr(args: [kcalCount.toString()])),
-          const _VerticalDivider(),
-          Text(LocaleKeys.minutes.tr(args: [minutes.toString()])),
-          const _VerticalDivider(),
-          Text(LocaleKeys.ingredients_count
-              .tr(args: [ingredientsCount.toString()])),
-        ],
+      child: DefaultTextStyle(
+        style: theme.textTheme.bodyText1!,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(LocaleKeys.kcal.tr(args: [kcalCount.toString()])),
+            const _VerticalDivider(),
+            Text(LocaleKeys.minutes.tr(args: [minutes.toString()])),
+            const _VerticalDivider(),
+            Text(LocaleKeys.ingredients_count
+                .tr(args: [ingredientsCount.toString()])),
+          ],
+        ),
       ),
     );
   }
@@ -42,9 +45,8 @@ class _VerticalDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 1,
-      height: Dimens.spacing24,
-      color: AppColors.grey,
-    );
+        width: 1,
+        height: Dimens.spacing24,
+        color: Theme.of(context).dividerColor);
   }
 }

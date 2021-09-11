@@ -26,7 +26,7 @@ class ErrorView extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: Dimens.spacing48)),
               child: Text(
                 LocaleKeys.retry.tr(),
-                style: TextStyles.subtitleBlack.copyWith(color: Colors.white),
+                style: TextStyles.subtitle.copyWith(color: Colors.white),
               ),
               onPressed: onRetry),
         ],
